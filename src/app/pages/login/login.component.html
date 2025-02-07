@@ -1,0 +1,46 @@
+<div class="main-container">
+    <div class="login-container">
+      <div class="logo-container">
+        <img
+          class="logo-code-solutions"
+          src="code-solutions-100.png"
+          alt="Logo da Code Solutions"/>
+      </div>
+  
+      <div class="email-container">
+        <mat-form-field appearance="outline">
+          <mat-label>E-mail</mat-label>
+          <input matInput placeholder="E-mail"/>
+          <mat-icon matPrefix>email</mat-icon>
+        </mat-form-field>
+      </div>
+  
+      <div class="senha-container">
+        <mat-form-field appearance="outline">
+          <mat-label>Senha</mat-label>
+          <mat-icon matPrefix>lock</mat-icon>
+          <input
+            matInput
+            [type]="hide() ? 'password' : 'text'" placeholder="Senha"/>
+  
+          <button
+            mat-icon-button
+            matSuffix
+            (click)="clickEvent($event)"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide()">
+            <mat-icon>{{ hide() ? "visibility_off" : "visibility" }}</mat-icon>
+          </button>
+  
+          <mat-hint align="end">
+            <a href="/src/app/pages/esqueceu-senha/esqueceu-senha.component.html">Esqueceu a senha?</a>
+          </mat-hint>
+        </mat-form-field>
+      </div>
+  
+      <div class="btn-container">
+        <button class="btn-confirmar" mat-fab>CONFIRMAR</button>
+      </div>
+      
+    </div>
+  </div>
