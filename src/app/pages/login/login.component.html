@@ -33,13 +33,17 @@
           </button>
   
           <mat-hint align="end">
-            <a href="/src/app/pages/esqueceu-senha/esqueceu-senha.component.html">Esqueceu a senha?</a>
+            <a [routerLink]="['/esqueceu-senha']">Esqueceu a senha?</a>
           </mat-hint>
         </mat-form-field>
       </div>
   
       <div class="btn-container">
         <button class="btn-confirmar" mat-fab>CONFIRMAR</button>
+      </div>
+
+      <div class="criar-conta-container">
+        <a [routerLink]="['/criar-conta']">Não tem uma conta? Crie uma agora!</a>
       </div>
       
     </div>

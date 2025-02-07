@@ -69,6 +69,7 @@ mat-hint {
 mat-hint a {
   text-decoration: none;
   color: $cor-primaria;
+  cursor: pointer;
 }
 
 mat-hint a:hover {
@@ -89,4 +90,21 @@ mat-hint a:hover {
   background-color: $cor-primaria;
   color: $cor-texto-branco !important;
   box-shadow: -0.4rem 0.6rem 1.5rem $cor-sombra;
+}
+
+.criar-conta-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 12%;
+}
+
+
+.criar-conta-container a {
+  text-decoration: none;
+  color: $cor-primaria;
+  cursor: pointer;
+}
+
+.criar-conta-container a:hover {
+  text-decoration: underline;
 }
