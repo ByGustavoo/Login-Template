@@ -10,16 +10,14 @@
     <div class="email-container">
       <mat-form-field appearance="outline">
         <mat-label>E-mail</mat-label>
+        <mat-icon matPrefix>email</mat-icon>
         <input
           matInput
           placeholder="E-mail"
           [formControl]="email"
-          (blur)="updateErrorMessage()"
-          required />
-        @if (email.invalid) {
-          <mat-error>{{ errorMessage() }}</mat-error>
-        }
-        <mat-icon matPrefix>email</mat-icon>
+          (blur)="emailErrorMessage()"
+          required/>
+        <mat-error ngIf="email.invalid">{{ emailError() }}</mat-error>
       </mat-form-field>
     </div>
 
@@ -29,8 +27,12 @@
         <mat-icon matPrefix>lock</mat-icon>
         <input
           matInput
+          placeholder="Senha"
+          [formControl]="senha"
+          (blur)="senhaErrorMessage()"
           [type]="hide() ? 'password' : 'text'"
-          placeholder="Senha"/>
+          required/>
+        <mat-error ngIf="senha.invalid">{{ senhaError() }}</mat-error>
 
         <button
           mat-icon-button

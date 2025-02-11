@@ -1,1 +1,29 @@
-<p>esqueceu-senha works!</p>
+<div class="main-container">
+  <div class="login-container">
+    <div class="logo-container">
+      <img
+        class="logo-code-solutions"
+        src="code-solutions-100.png"
+        alt="Logo da Code Solutions"/>
+    </div>
+
+    <div class="email-container">
+      <mat-form-field appearance="outline">
+        <mat-label>E-mail</mat-label>
+        <input
+          matInput
+          placeholder="E-mail"
+          [formControl]="email"
+          (blur)="emailErrorMessage()"
+          required/>
+        <mat-error ngIf="email.invalid">{{ emailError() }}</mat-error>
+        <mat-icon matPrefix>email</mat-icon>
+      </mat-form-field>
+    </div>
+
+    <div class="btn-container">
+      <button class="btn-confirmar" mat-fab>CONFIRMAR</button>
+    </div>
+
+  </div>
+</div>
