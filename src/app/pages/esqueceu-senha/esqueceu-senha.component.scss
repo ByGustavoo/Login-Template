@@ -1,9 +1,8 @@
 $cor-fundo: #f8f9f9;
-$cor-focus: #5c7cfa;
+$cor-branco: #ffffff;
 $cor-primaria: #5c7cfa;
-$cor-secundaria: #738df5;
-$cor-fundo-branco: #ffffff;
-$cor-texto-branco: #ffffff;
+$cor-texto-preto: #000000;
+$cor-botao-cancelar: #FF0000;
 $cor-sombra: rgba(0, 0, 0, 0.3);
 
 .main-container {
@@ -17,7 +16,7 @@ $cor-sombra: rgba(0, 0, 0, 0.3);
   width: 67rem;
   height: 42rem;
   border-radius: 1rem;
-  background-color: $cor-fundo-branco;
+  background-color: $cor-branco;
   box-shadow: -0.4rem 0.6rem 1.5rem $cor-sombra;
 }
 
@@ -31,6 +30,24 @@ $cor-sombra: rgba(0, 0, 0, 0.3);
 .logo-code-solutions {
   width: 14%;
   background-color: transparent;
+}
+
+.texto {
+  display: flex;
+  padding-top: 2%;
+  justify-content: center;
+  background-color: transparent;
+  font-size: 28px;
+  color: $cor-texto-preto;
+}
+
+.subtitulo {
+  display: flex;
+  padding-top: 2%;
+  justify-content: center;
+  background-color: transparent;
+  font-size: 18px;
+  color: $cor-texto-preto;
 }
 
 .email-container, mat-form-field {
@@ -71,15 +88,25 @@ mat-hint a:hover {
 .btn-container {
   display: flex;
   padding-top: 3%;
+  gap: 14%;
   justify-content: center;
   background-color: transparent;
 }
 
+.btn-cancelar {
+  font-size: 21px;
+  width: 18%;
+  font-weight: 600;
+  background-color: $cor-botao-cancelar;
+  color: $cor-branco !important;
+  box-shadow: -0.4rem 0.6rem 1.5rem $cor-sombra;
+}
+
 .btn-confirmar {
   font-size: 21px;
-  width: 50%;
+  width: 18%;
   font-weight: 600;
   background-color: $cor-primaria;
-  color: $cor-texto-branco !important;
+  color: $cor-branco !important;
   box-shadow: -0.4rem 0.6rem 1.5rem $cor-sombra;
 }
