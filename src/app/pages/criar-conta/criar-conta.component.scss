@@ -1,0 +1,58 @@
+$cor-fundo: #f8f9f9;
+$cor-focus: #5c7cfa;
+$cor-primaria: #5c7cfa;
+$cor-secundaria: #738df5;
+$cor-fundo-branco: #ffffff;
+$cor-texto-branco: #ffffff;
+$cor-sombra: rgba(0, 0, 0, 0.3);
+
+.main-container {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.criar-conta-container {
+  width: 100rem;
+  height: 50rem;
+  border-radius: 1rem;
+  background-color: $cor-fundo-branco;
+  box-shadow: -0.4rem 0.6rem 1.5rem $cor-sombra;
+}
+
+.logo-container {
+  top: 0;
+  left: 0;
+  padding-left: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 0.4rem;
+  background-color: transparent;
+}
+
+.logo-code-solutions {
+  width: 5.5%;
+  background-color: transparent;
+}
+
+mat-stepper {
+  background-color: transparent;
+}
+
+.nome-container, mat-form-field {
+  padding-top: 1rem;
+  width: 50%;
+}
+
+.sobrenome-container {
+  padding-top: 1rem;
+  width: 50%;
+}
+
+.btn-proximo {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 0.5rem;
+  margin-top: 21.5%;
+
+}
