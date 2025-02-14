@@ -8,9 +8,20 @@ import { MatButtonModule } from '@angular/material/button';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { MatIconModule } from '@angular/material/icon';
 import { merge } from 'rxjs';
+import { MAT_DATE_FORMATS, MAT_DATE_LOCALE, provideNativeDateAdapter } from '@angular/material/core';
+import { MatDatepickerModule} from '@angular/material/datepicker';
+import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
+import { MatSelectModule } from '@angular/material/select';
+
+export const DATE_FORMAT = {
+  display: {
+    dateInput: 'DD/MM/YYYY'
+  }
+};
 
 @Component({
-  selector: 'app-esqueceu-senha',
+  standalone: true,
+  selector: 'app-criar-conta',
   templateUrl: './criar-conta.component.html',
   styleUrl: './criar-conta.component.scss',
   imports: [
@@ -21,9 +32,19 @@ import { merge } from 'rxjs';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    MatDatepickerModule,
+    NgxMaskDirective,
+    MatSelectModule
   ],
+  providers: [
+    provideNgxMask(),
+    provideNativeDateAdapter(),
+    { provide: MAT_DATE_FORMATS, useValue: DATE_FORMAT },
+    { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' }
+  ]
 })
+
 export class CriarContaComponent {
   private _formBuilder = inject(FormBuilder);
   readonly email = new FormControl('', [Validators.required, Validators.email]);

@@ -17,7 +17,7 @@ $cor-sombra: rgba(0, 0, 0, 0.3);
   width: 100rem;
   height: 50rem;
   border-radius: 1rem;
-  background-color: $cor-fundo-branco;
+  background-color: $cor-fundo;
   box-shadow: -0.4rem 0.6rem 1.5rem $cor-sombra;
 }
 
@@ -25,8 +25,8 @@ $cor-sombra: rgba(0, 0, 0, 0.3);
   top: 0;
   left: 0;
   padding-left: 1rem;
-  padding-top: 1rem;
-  padding-bottom: 0.4rem;
+  padding-top: 2rem;
+  padding-bottom: 0.5rem;
   background-color: transparent;
 }
 
@@ -39,20 +39,57 @@ mat-stepper {
   background-color: transparent;
 }
 
-.nome-container, mat-form-field {
-  padding-top: 1rem;
-  width: 50%;
+.primeiro-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 3rem;
+  width: 99.6%;
 }
 
-.sobrenome-container {
-  padding-top: 1rem;
-  width: 50%;
+.segundo-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 3rem;
+  width: 99.6%;
 }
 
-.btn-proximo {
+.terceiro-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 3rem;
+  width: 99.6%;
+}
+
+.quarto-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 3rem;
+  width: 99.6%;
+}
+
+mat-form-field {
+  width: 30%;
+}
+
+.btn-container {
   display: flex;
   justify-content: flex-end;
-  margin-right: 0.5rem;
-  margin-top: 21.5%;
+  padding-top: 1rem;
+  padding-right: 0.3rem;
+}
 
+.btn-container button {
+  color: $cor-texto-branco;
+  background-color: $cor-primaria;
+  font-weight: 500;
+  font-size: 14px;
+  width: 7rem;
+}
+
+.btn-container button:hover {
+  box-shadow: -0.4rem 0.6rem 1.5rem $cor-sombra;
 }

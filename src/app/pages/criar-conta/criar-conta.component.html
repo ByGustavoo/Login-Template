@@ -12,28 +12,91 @@
         <form [formGroup]="firstFormGroup">
           <ng-template matStepLabel>Dados Pessoais</ng-template>
 
-          <div class="nome-container">
+          <div class="primeiro-container">
             <mat-form-field appearance="outline">
               <mat-label>Nome</mat-label>
-              <input
-              matInput
-              placeholder="Nome"/>
+              <input matInput placeholder="Nome" />
             </mat-form-field>
-          </div>
 
-          <div class="sobrenome-container">
             <mat-form-field appearance="outline">
               <mat-label>Sobrenome</mat-label>
+              <input matInput placeholder="Sobrenome" />
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Data de Nascimento</mat-label>
               <input
-              matInput
-              placeholder="Sobrenome"/>
+                matInput
+                [matDatepicker]="picker"
+                mask="00/00/0000"
+                placeholder="Data de Nascimento"/>
+              <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
           </div>
 
-          <div class="btn-proximo">
-            <button mat-button matStepperNext>PRÓXIMO</button>
+          <div class="segundo-container">
+            <mat-form-field appearance="outline">
+              <mat-label>Estado Civil</mat-label>
+              <mat-select>
+                <mat-option value="option">Solteiro</mat-option>
+                <mat-option value="option">União Estável</mat-option>
+                <mat-option value="option">Casado</mat-option>
+                <mat-option value="option">Divorciado</mat-option>
+                <mat-option value="option">Viúvo</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Gênero</mat-label>
+              <mat-select>
+                <mat-option value="option">Feminino</mat-option>
+                <mat-option value="option">Masculino</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Nacionalidade</mat-label>
+              <input matInput placeholder="Nacionalidade" />
+            </mat-form-field>
+          </div>
+<div class="terceiro-container">
+            <mat-form-field appearance="outline">
+              <mat-label>CPF</mat-label>
+              <input matInput mask="000.000.000-00" placeholder="CPF" />
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>RG</mat-label>
+              <input matInput mask="00.000.000-0" placeholder="RG" />
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>E-mail</mat-label>
+              <input matInput placeholder="E-mail" />
+            </mat-form-field>
           </div>
 
+          <div class="quarto-container">
+            <mat-form-field appearance="outline">
+              <mat-label>Telefone</mat-label>
+              <input matInput mask="(00) 00000-0000" placeholder="Telefone" />
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Profissão</mat-label>
+              <input matInput placeholder="Profissão" />
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Nome da Empresa</mat-label>
+              <input matInput placeholder="Nome da Empresa" />
+            </mat-form-field>
+          </div>
+
+          <div class="btn-container">
+            <button mat-fab matStepperNext>PRÓXIMO</button>
+          </div>
         </form>
       </mat-step>
 
@@ -59,12 +122,10 @@
 
       <mat-step>
         <ng-template matStepLabel>Login</ng-template>
-
         <div>
           <button mat-button matStepperPrevious>Back</button>
           <button mat-button (click)="stepper.reset()">Reset</button>
         </div>
-
       </mat-step>
     </mat-stepper>
   </div>
