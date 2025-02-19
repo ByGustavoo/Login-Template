@@ -21,13 +21,7 @@ import { merge } from 'rxjs';
     FormsModule,
     ReactiveFormsModule,
   ],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [
-    {
-      provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
-      useValue: { appearance: 'outline', hideRequiredMarker: true },
-    },
-  ],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoginComponent {
   readonly email = new FormControl('', [Validators.required, Validators.email]);
@@ -55,10 +49,10 @@ export class LoginComponent {
   emailErrorMessage() {
     if (this.email.hasError('required')) {
       this.emailError.set('Por favor, digite um e-mail!');
-    } 
+    }
     else if (this.email.hasError('email')) {
       this.emailError.set('Por favor, digite um e-mail válido!');
-    } 
+    }
     else {
       this.emailError.set('');
     }

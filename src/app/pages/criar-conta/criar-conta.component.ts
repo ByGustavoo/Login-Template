@@ -2,7 +2,7 @@ import { RouterModule } from '@angular/router';
 import { Component } from '@angular/core';
 import { FormBuilder, Validators, FormsModule, ReactiveFormsModule, FormGroup } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldModule } from '@angular/material/form-field';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -41,7 +41,7 @@ export const DATE_FORMAT = {
     provideNgxMask(),
     provideNativeDateAdapter(),
     { provide: MAT_DATE_FORMATS, useValue: DATE_FORMAT },
-    { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' }
+    { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' },
   ]
 })
 export class CriarContaComponent {

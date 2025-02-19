@@ -142,18 +142,50 @@
           <ng-template matStepLabel>Endereço</ng-template>
 
           <mat-form-field>
-            <mat-label>Address</mat-label>
-            <input
-              matInput
-              formControlName="secondCtrl"
-              placeholder="Ex. 1 Main St, New York, NY"
-              required/>
+            <mat-label>Rua</mat-label>
+            <input matInput formControlName="secondCtrl" placeholder="Rua" required/>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Número</mat-label>
+            <input matInput formControlName="secondCtrl" placeholder="Número" required/>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Bairro</mat-label>
+            <input matInput formControlName="secondCtrl" placeholder="Bairro" required/>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Cidade</mat-label>
+            <input matInput formControlName="secondCtrl" placeholder="Cidade" required/>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Estado</mat-label>
+            <input matInput formControlName="secondCtrl" placeholder="Estado" required/>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>CEP</mat-label>
+            <input matInput formControlName="secondCtrl" placeholder="CEP" required/>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Complemento</mat-label>
+            <input matInput formControlName="secondCtrl" placeholder="Complemento" required/>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Ponto de Referência</mat-label>
+            <input matInput formControlName="secondCtrl" placeholder="Ponto de Referência" required/>
           </mat-form-field>
 
           <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
+            <button mat-button matStepperPrevious>VOLTAR</button>
+            <button mat-button matStepperNext>PRÓXIMO</button>
           </div>
+
         </form>
       </mat-step>
 
