@@ -1,12 +1,12 @@
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
-import { MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldModule } from '@angular/material/form-field';
+import { merge } from 'rxjs';
+import { RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { RouterModule } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { merge } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -23,6 +23,7 @@ import { merge } from 'rxjs';
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
+
 export class LoginComponent {
   readonly email = new FormControl('', [Validators.required, Validators.email]);
   readonly senha = new FormControl('', [Validators.required]);

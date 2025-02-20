@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { RouterOutlet } from '@angular/router';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 
 @Component({
   selector: 'app-root',
-   templateUrl: './app.component.html',
+  templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   imports: [RouterOutlet],
    providers: [
@@ -14,6 +14,7 @@ import { RouterOutlet } from '@angular/router';
       },
     ],
 })
+
 export class AppComponent {
   title = 'Login-Template';
 }

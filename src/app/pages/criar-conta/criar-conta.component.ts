@@ -1,16 +1,17 @@
-import { RouterModule } from '@angular/router';
 import { Component } from '@angular/core';
-import { FormBuilder, Validators, FormsModule, ReactiveFormsModule, FormGroup } from '@angular/forms';
-import { MatInputModule } from '@angular/material/input';
-import { MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldModule } from '@angular/material/form-field';
-import { MatStepperModule } from '@angular/material/stepper';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MAT_DATE_FORMATS, MAT_DATE_LOCALE, provideNativeDateAdapter } from '@angular/material/core';
-import { MatDatepickerModule} from '@angular/material/datepicker';
-import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
-import { MatSelectModule } from '@angular/material/select';
+import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
+import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDatepickerModule} from '@angular/material/datepicker';
+import { MAT_DATE_FORMATS, MAT_DATE_LOCALE, provideNativeDateAdapter } from '@angular/material/core';
+import { FormBuilder, Validators, FormsModule, ReactiveFormsModule, FormGroup } from '@angular/forms';
+
 
 export const DATE_FORMAT = {
   display: {
@@ -40,10 +41,11 @@ export const DATE_FORMAT = {
   providers: [
     provideNgxMask(),
     provideNativeDateAdapter(),
-    { provide: MAT_DATE_FORMATS, useValue: DATE_FORMAT },
     { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' },
+    { provide: MAT_DATE_FORMATS, useValue: DATE_FORMAT },
   ]
 })
+
 export class CriarContaComponent {
     isEditable = true;
     firstFormGroup: FormGroup;
