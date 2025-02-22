@@ -15,7 +15,7 @@
           <div class="primeiro-container">
             <mat-form-field appearance="outline">
               <mat-label>Nome</mat-label>
-              <input matInput formControlName="nome" placeholder="Nome" />
+              <input matInput formControlName="nome" />
               <mat-error *ngIf="firstFormGroup.get('nome')?.hasError('required')">
                 Nome é obrigatório!
               </mat-error>
@@ -23,7 +23,7 @@
 
             <mat-form-field appearance="outline">
               <mat-label>Sobrenome</mat-label>
-              <input matInput formControlName="sobrenome" placeholder="Sobrenome" />
+              <input matInput formControlName="sobrenome" />
               <mat-error *ngIf="firstFormGroup.get('sobrenome')?.hasError('required')">
                 Sobrenome é obrigatório!
               </mat-error>
@@ -31,8 +31,7 @@
 
             <mat-form-field appearance="outline">
               <mat-label>Data de Nascimento</mat-label>
-              <input matInput [matDatepicker]="picker" formControlName="dataNascimento"
-                placeholder="Data de Nascimento" />
+              <input matInput [matDatepicker]="picker" formControlName="dataNascimento" />
               <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
               <mat-error *ngIf="firstFormGroup.get('dataNascimento')?.hasError('required')">
@@ -68,10 +67,10 @@
             </mat-form-field>
 
             <mat-form-field appearance="outline">
-              <mat-label>Nacionalidade</mat-label>
-              <input matInput formControlName="nacionalidade" placeholder="Nacionalidade" />
-              <mat-error *ngIf="firstFormGroup.get('nacionalidade')?.hasError('required')">
-                Nacionalidade é obrigatório!
+              <mat-label>Telefone</mat-label>
+              <input matInput formControlName="telefone" mask="(00) 00000-0000" />
+              <mat-error *ngIf="firstFormGroup.get('telefone')?.hasError('required')">
+                Telefone é obrigatório!
               </mat-error>
             </mat-form-field>
           </div>
@@ -79,7 +78,7 @@
           <div class="terceiro-container">
             <mat-form-field appearance="outline">
               <mat-label>CPF</mat-label>
-              <input matInput formControlName="cpf" mask="000.000.000-00" placeholder="CPF" />
+              <input matInput formControlName="cpf" mask="000.000.000-00" />
               <mat-error *ngIf="firstFormGroup.get('cpf')?.hasError('required')">
                 CPF é obrigatório!
               </mat-error>
@@ -87,46 +86,9 @@
 
             <mat-form-field appearance="outline">
               <mat-label>RG</mat-label>
-              <input matInput formControlName="rg" mask="000.000.000-0" placeholder="RG" />
+              <input matInput formControlName="rg" mask="000.000.000-0" />
               <mat-error *ngIf="firstFormGroup.get('rg')?.hasError('required')">
                 RG é obrigatório!
-              </mat-error>
-            </mat-form-field>
-
-            <mat-form-field appearance="outline">
-              <mat-label>E-mail</mat-label>
-              <input matInput formControlName="email" placeholder="E-mail" />
-              <mat-error *ngIf="firstFormGroup.get('email')?.hasError('required')">
-                E-mail é obrigatório!
-              </mat-error>
-              <mat-error *ngIf="firstFormGroup.get('email')?.hasError('email')">
-                Por favor, digite um e-mail válido!
-              </mat-error>
-            </mat-form-field>
-          </div>
-
-          <div class="quarto-container">
-            <mat-form-field appearance="outline">
-              <mat-label>Telefone</mat-label>
-              <input matInput formControlName="telefone" mask="(00) 00000-0000" placeholder="Telefone" />
-              <mat-error *ngIf="firstFormGroup.get('telefone')?.hasError('required')">
-                Telefone é obrigatório!
-              </mat-error>
-            </mat-form-field>
-
-            <mat-form-field appearance="outline">
-              <mat-label>Profissão</mat-label>
-              <input matInput formControlName="profissao" placeholder="Profissão" />
-              <mat-error *ngIf="firstFormGroup.get('profissao')?.hasError('required')">
-                Profissão é obrigatório!
-              </mat-error>
-            </mat-form-field>
-
-            <mat-form-field appearance="outline">
-              <mat-label>Nome da Empresa</mat-label>
-              <input matInput formControlName="empresa" placeholder="Nome da Empresa" />
-              <mat-error *ngIf="firstFormGroup.get('empresa')?.hasError('required')">
-                Nome da Empresa é obrigatório!
               </mat-error>
             </mat-form-field>
           </div>

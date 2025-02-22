@@ -58,13 +58,9 @@ export class CriarContaComponent {
         dataNascimento: ['', Validators.required],
         genero: ['', Validators.required],
         estadoCivil: ['', Validators.required],
-        nacionalidade: ['', Validators.required],
+        telefone: ['', Validators.required],
         cpf: ['', [Validators.required]],
         rg: ['', Validators.required],
-        email: ['', [Validators.required, Validators.email]],
-        telefone: ['', Validators.required],
-        profissao: ['', Validators.required],
-        empresa: ['', Validators.required],
       });
 
       this.secondFormGroup = this._formBuilder.group({
