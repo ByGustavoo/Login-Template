@@ -46,6 +46,7 @@
               <mat-select formControlName="genero">
                 <mat-option value="feminino">Feminino</mat-option>
                 <mat-option value="masculino">Masculino</mat-option>
+                <mat-option value="masculino">Prefiro não dizer</mat-option>
               </mat-select>
               <mat-error *ngIf="firstFormGroup.get('genero')?.hasError('required')">
                 Selecione um Gênero!
@@ -99,57 +100,65 @@
         </form>
       </mat-step>
 
+
       <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
         <form [formGroup]="secondFormGroup">
           <ng-template matStepLabel>Endereço</ng-template>
 
-          <mat-form-field>
-            <mat-label>Rua</mat-label>
-            <input matInput formControlName="secondCtrl" placeholder="Rua" required/>
-          </mat-form-field>
+          <div class="primeiro-container">
+            <mat-form-field>
+              <mat-label>Rua</mat-label>
+              <mat-icon matSuffix>street</mat-icon>
+              <input matInput formControlName="secondCtrl" required/>
+            </mat-form-field>
 
           <mat-form-field>
             <mat-label>Número</mat-label>
-            <input matInput formControlName="secondCtrl" placeholder="Número" required/>
+            <input matInput formControlName="secondCtrl" required/>
           </mat-form-field>
 
           <mat-form-field>
             <mat-label>Bairro</mat-label>
-            <input matInput formControlName="secondCtrl" placeholder="Bairro" required/>
+            <input matInput formControlName="secondCtrl" required/>
           </mat-form-field>
-
-          <mat-form-field>
-            <mat-label>Cidade</mat-label>
-            <input matInput formControlName="secondCtrl" placeholder="Cidade" required/>
-          </mat-form-field>
-
-          <mat-form-field>
-            <mat-label>Estado</mat-label>
-            <input matInput formControlName="secondCtrl" placeholder="Estado" required/>
-          </mat-form-field>
-
-          <mat-form-field>
-            <mat-label>CEP</mat-label>
-            <input matInput formControlName="secondCtrl" placeholder="CEP" required/>
-          </mat-form-field>
-
-          <mat-form-field>
-            <mat-label>Complemento</mat-label>
-            <input matInput formControlName="secondCtrl" placeholder="Complemento" required/>
-          </mat-form-field>
-
-          <mat-form-field>
-            <mat-label>Ponto de Referência</mat-label>
-            <input matInput formControlName="secondCtrl" placeholder="Ponto de Referência" required/>
-          </mat-form-field>
-
-          <div>
-            <button mat-button matStepperPrevious>VOLTAR</button>
-            <button mat-button matStepperNext>PRÓXIMO</button>
           </div>
 
+          <div class="segundo-container">
+            <mat-form-field>
+              <mat-label>Cidade</mat-label>
+              <input matInput formControlName="secondCtrl" required/>
+            </mat-form-field>
+
+            <mat-form-field>
+              <mat-label>Estado</mat-label>
+              <input matInput formControlName="secondCtrl" maxlength="2" required/>
+            </mat-form-field>
+
+            <mat-form-field>
+              <mat-label>CEP</mat-label>
+              <input matInput formControlName="secondCtrl" required/>
+            </mat-form-field>
+          </div>
+
+          <div class="terceiro-container">
+            <mat-form-field>
+              <mat-label>Complemento</mat-label>
+              <input matInput formControlName="secondCtrl" required/>
+            </mat-form-field>
+
+            <mat-form-field>
+              <mat-label>Ponto de Referência</mat-label>
+              <input matInput formControlName="secondCtrl" required/>
+            </mat-form-field>
+          </div>
+
+          <div class="btn-container-endereco">
+            <button mat-fab matStepperPrevious>VOLTAR</button>
+            <button mat-fab matStepperNext>PRÓXIMO</button>
+          </div>
         </form>
       </mat-step>
+
 
       <mat-step>
         <ng-template matStepLabel>Login</ng-template>

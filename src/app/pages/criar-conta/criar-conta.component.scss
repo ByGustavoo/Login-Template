@@ -35,7 +35,6 @@ $cor-sombra: rgba(0, 0, 0, 0.3);
 }
 
 mat-stepper {
-  display: flex;
   padding-left: 0.6rem;
   padding-right: 0.6rem;
   background-color: transparent;
@@ -86,4 +85,20 @@ mat-form-field {
 
 .btn-container button:hover {
   box-shadow: -0.4rem 0.6rem 1.5rem $cor-sombra;
+}
+
+.btn-container-endereco {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 83.7%;
+  padding-top: 8rem;
+  padding-right: 0.3rem;
+}
+
+.btn-container-endereco button {
+  color: $cor-texto-branco;
+  background-color: $cor-primaria;
+  font-weight: 500;
+  font-size: 15px;
+  width: 7rem;
 }
