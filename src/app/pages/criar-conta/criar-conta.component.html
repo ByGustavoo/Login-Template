@@ -108,12 +108,13 @@
           <div class="primeiro-container">
             <mat-form-field>
               <mat-label>Rua</mat-label>
-              <mat-icon matSuffix>street</mat-icon>
+              <mat-icon matSuffix>house</mat-icon>
               <input matInput formControlName="secondCtrl" required/>
             </mat-form-field>
 
           <mat-form-field>
             <mat-label>Número</mat-label>
+            <mat-icon matSuffix>123</mat-icon>
             <input matInput formControlName="secondCtrl" required/>
           </mat-form-field>
 
@@ -126,11 +127,13 @@
           <div class="segundo-container">
             <mat-form-field>
               <mat-label>Cidade</mat-label>
+              <mat-icon matSuffix>matLocationOn</mat-icon>
               <input matInput formControlName="secondCtrl" required/>
             </mat-form-field>
 
             <mat-form-field>
               <mat-label>Estado</mat-label>
+              <mat-icon matSuffix>mapoutline</mat-icon>
               <input matInput formControlName="secondCtrl" maxlength="2" required/>
             </mat-form-field>
 
@@ -162,9 +165,63 @@
 
       <mat-step>
         <ng-template matStepLabel>Login</ng-template>
-        <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button (click)="stepper.reset()">Reset</button>
+
+          <div class="email-container">
+            <mat-form-field appearance="outline">
+              <mat-label>E-mail</mat-label>
+              <mat-icon matPrefix>email</mat-icon>
+              <input
+                matInput
+                required/>
+            </mat-form-field>
+          </div>
+
+          <div class="senha-container">
+            <mat-form-field appearance="outline">
+              <mat-label>Senha</mat-label>
+              <mat-icon matPrefix>lock</mat-icon>
+              <input
+                matInput
+                [type]="hide() ? 'password' : 'text'"
+                required/>
+
+              <button
+                mat-icon-button
+                matSuffix
+                (click)="clickEvent($event)"
+                [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide()">
+                <mat-icon>{{ hide() ? "visibility_off" : "visibility" }}</mat-icon>
+              </button>
+            </mat-form-field>
+          </div>
+
+          <div class="confirmar-senha-container">
+            <mat-form-field appearance="outline">
+              <mat-label>Confirmar Senha</mat-label>
+              <mat-icon matPrefix>lock</mat-icon>
+              <input
+                matInput
+                [type]="hide() ? 'password' : 'text'"
+                required/>
+
+              <button
+                mat-icon-button
+                matSuffix
+                (click)="clickEvent($event)"
+                [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide()">
+                <mat-icon>{{ hide() ? "visibility_off" : "visibility" }}</mat-icon>
+              </button>
+            </mat-form-field>
+          </div>
+
+        <div class="btn-finalizar-container">
+          <button class="btn-finalizar" mat-fab>FINALIZAR</button>
+        </div>
+
+        <div class="btn-voltar-container">
+          <button class="btn-voltar" mat-fab matStepperPrevious>VOLTAR</button>
         </div>
       </mat-step>
     </mat-stepper>

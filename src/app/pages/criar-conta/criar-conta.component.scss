@@ -90,12 +90,50 @@ mat-form-field {
 .btn-container-endereco {
   display: flex;
   justify-content: space-evenly;
-  gap: 83.7%;
+  gap: 84%;
+  width: 100%;
   padding-top: 8rem;
   padding-right: 0.3rem;
 }
 
 .btn-container-endereco button {
+  color: $cor-texto-branco;
+  background-color: $cor-primaria;
+  font-weight: 500;
+  font-size: 15px;
+  width: 7rem;
+}
+
+.email-container,
+.senha-container,
+.confirmar-senha-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3rem;
+}
+
+.btn-finalizar-container {
+  display: flex;
+  padding-top: 3%;
+  justify-content: center;
+  background-color: transparent;
+}
+
+.btn-finalizar {
+  font-size: 21px;
+  width: 30%;
+  font-weight: 600;
+  background-color: $cor-primaria;
+  color: $cor-texto-branco !important;
+  box-shadow: -0.4rem 0.6rem 1.5rem $cor-sombra;
+}
+
+.btn-voltar-container {
+  padding-top: 3%;
+}
+
+.btn-voltar-container button {
   color: $cor-texto-branco;
   background-color: $cor-primaria;
   font-weight: 500;
