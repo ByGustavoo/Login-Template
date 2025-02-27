@@ -46,6 +46,7 @@ export const DATE_FORMAT = {
 })
 
 export class CriarContaComponent {
+
     isEditable = true;
     firstFormGroup: FormGroup;
     secondFormGroup: FormGroup;
@@ -59,7 +60,7 @@ export class CriarContaComponent {
         estadoCivil: ['', Validators.required],
         telefone: ['', Validators.required],
         cpf: ['', [Validators.required]],
-        rg: ['', Validators.required],
+        rg: ['', Validators.required,  Validators.maxLength(9)],
       });
 
       this.secondFormGroup = this._formBuilder.group({

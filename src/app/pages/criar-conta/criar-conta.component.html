@@ -15,7 +15,7 @@
           <div class="primeiro-container">
             <mat-form-field appearance="outline">
               <mat-label>Nome</mat-label>
-              <input matInput formControlName="nome" />
+              <input matInput formControlName="nome" type="text"/>
               <mat-error *ngIf="firstFormGroup.get('nome')?.hasError('required')">
                 Nome é obrigatório!
               </mat-error>
@@ -23,7 +23,7 @@
 
             <mat-form-field appearance="outline">
               <mat-label>Sobrenome</mat-label>
-              <input matInput formControlName="sobrenome" />
+              <input matInput formControlName="sobrenome" type="text"/>
               <mat-error *ngIf="firstFormGroup.get('sobrenome')?.hasError('required')">
                 Sobrenome é obrigatório!
               </mat-error>
