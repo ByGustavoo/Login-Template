@@ -60,7 +60,7 @@ export class CriarContaComponent {
         estadoCivil: ['', Validators.required],
         telefone: ['', Validators.required],
         cpf: ['', [Validators.required]],
-        rg: ['', Validators.required,  Validators.maxLength(9)],
+        rg: ['', Validators.required],
       });
 
       this.secondFormGroup = this._formBuilder.group({
