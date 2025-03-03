@@ -8,15 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatDatepickerModule} from '@angular/material/datepicker';
-import { MAT_DATE_FORMATS, MAT_DATE_LOCALE, provideNativeDateAdapter } from '@angular/material/core';
 import { FormBuilder, Validators, FormsModule, ReactiveFormsModule, FormGroup } from '@angular/forms';
-
-export const DATE_FORMAT = {
-  display: {
-    dateInput: 'DD/MM/YYYY'
-  }
-};
 
 @Component({
   standalone: true,
@@ -33,18 +25,13 @@ export const DATE_FORMAT = {
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
-    MatDatepickerModule,
     NgxMaskDirective,
     MatSelectModule
   ],
   providers: [
-    provideNgxMask(),
-    provideNativeDateAdapter(),
-    { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' },
-    { provide: MAT_DATE_FORMATS, useValue: DATE_FORMAT },
+    provideNgxMask()
   ]
 })
-
 export class CriarContaComponent {
 
     isEditable = true;
@@ -72,5 +59,10 @@ export class CriarContaComponent {
   clickEvent(event: MouseEvent) {
     this.hide.set(!this.hide());
     event.stopPropagation();
+  }
+
+  verificarForms() {
+    this.firstFormGroup.markAllAsTouched();
+
   }
 }

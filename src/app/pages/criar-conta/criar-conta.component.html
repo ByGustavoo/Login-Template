@@ -31,9 +31,9 @@
 
             <mat-form-field appearance="outline">
               <mat-label>Data de Nascimento</mat-label>
-              <input matInput [matDatepicker]="picker" formControlName="dataNascimento" />
-              <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-              <mat-datepicker #picker></mat-datepicker>
+              <input matInput formControlName="dataNascimento" mask="00/00/0000"/>
+              <mat-hint>DD/MM/YYYY</mat-hint>
+              <mat-icon matIconSuffix>calendar_month</mat-icon>
               <mat-error *ngIf="firstFormGroup.get('dataNascimento')?.hasError('required')">
                 Data de Nascimento é obrigatório!
               </mat-error>
@@ -95,7 +95,7 @@
           </div>
 
           <div class="btn-container">
-            <button mat-fab matStepperNext [disabled]="firstFormGroup.invalid">PRÓXIMO</button>
+            <button mat-fab matStepperNext (click)="verificarForms()">PRÓXIMO</button>
           </div>
         </form>
       </mat-step>
