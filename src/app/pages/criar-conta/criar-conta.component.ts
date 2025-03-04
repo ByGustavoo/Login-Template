@@ -37,6 +37,7 @@ export class CriarContaComponent {
     isEditable = true;
     firstFormGroup: FormGroup;
     secondFormGroup: FormGroup;
+    thirdFormGroup: FormGroup;
 
     constructor(private _formBuilder: FormBuilder) {
       this.firstFormGroup = this._formBuilder.group({
@@ -46,14 +47,27 @@ export class CriarContaComponent {
         genero: ['', Validators.required],
         estadoCivil: ['', Validators.required],
         telefone: ['', Validators.required],
-        cpf: ['', [Validators.required]],
+        cpf: ['', Validators.required],
         rg: ['', Validators.required],
       });
 
       this.secondFormGroup = this._formBuilder.group({
-        secondCtrl: ['', Validators.required],
-    });
-  }
+        rua: ['', Validators.required],
+        numero: ['', Validators.required],
+        bairro: ['', Validators.required],
+        cidade: ['', Validators.required],
+        estado: ['', Validators.required],
+        cep: ['', Validators.required],
+        complemento: ['', Validators.required],
+        pontoReferencia: ['', Validators.required],
+      });
+
+      this.thirdFormGroup = this._formBuilder.group({
+        email: ['', Validators.required],
+        senha: ['', Validators.required],
+        confirmarSenha: ['', Validators.required],
+      });
+    };
 
   hide = signal(true);
   clickEvent(event: MouseEvent) {
@@ -61,8 +75,15 @@ export class CriarContaComponent {
     event.stopPropagation();
   }
 
-  verificarForms() {
+  verificarPrimeiroForms() {
     this.firstFormGroup.markAllAsTouched();
+  }
 
+  verificarSegundoForms() {
+    this.secondFormGroup.markAllAsTouched();
+  }
+
+  verificarTerceiroForms() {
+    this.thirdFormGroup.markAllAsTouched();
   }
 }
